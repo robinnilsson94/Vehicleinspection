@@ -5,6 +5,7 @@ package Vehicleinspection.model;
  */
 public class CurrentVehicle {
     private String regNo;
+    private ResultsOnCurrentVehicle resultsOnCurrentVehicle;
 
     /**
      * Creates a new instance representing a particular vehicle.
@@ -26,7 +27,7 @@ public class CurrentVehicle {
     }
     
     public void resultOfInspection (boolean pass){
-        ResultsOnCurrentVehicle.updateResults(pass);
+        resultsOnCurrentVehicle.updateResults(pass);
     }
 
 

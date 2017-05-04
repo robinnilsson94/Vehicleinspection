@@ -2,7 +2,6 @@ package Vehicleinspection.model;
 
 import Vehicleinspection.integration.VehicleInspectionsRegistry;
 import Vehicleinspection.integration.Printer;
-
 /**
  * Represents one particular rental transaction, where one particular car is
  * rented by one particular customer.
@@ -33,7 +32,6 @@ public class InspectionCompany {
      * @param payment The payment used to pay this inspection.
      */
     public void pay(CardPayment payment) {
-        payment.calculateTotalCost(this);
         this.payment = payment;
     }
     

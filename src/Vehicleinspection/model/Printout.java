@@ -9,6 +9,8 @@ import java.time.LocalDateTime;
  */
 public class Printout {
     private final InspectionCompany inspection;
+    private CurrentVehicle currentVehicle;
+    private ResultsOnCurrentVehicle  resultsOnCurrentVehicle;
 
     /**
      * Creates a new instance.
@@ -35,11 +37,11 @@ public class Printout {
         endSection(builder);
 
         builder.append("Inspected car: ");
-        appendLine(builder, CurrentVehicle.getRegNo());
+        appendLine(builder, currentVehicle.getRegNo());
         endSection(builder);
         
         builder.append("Result of Inspection: ");
-        appendLine(builder, ResultsOnCurrentVehicle.getResults().toString());
+        appendLine(builder, resultsOnCurrentVehicle.getResults().toString());
         
         endSection(builder);
         

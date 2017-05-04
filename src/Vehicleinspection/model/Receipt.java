@@ -9,6 +9,8 @@ import Vehicleinspection.integration.InspectionCostDatabase;
  */
 public class Receipt {
     private final InspectionCompany inspection;
+    private InspectionCostDatabase inspectionCostDatabase;
+    private CurrentVehicle currentVehicle;
 
     /**
      * Creates a new instance.
@@ -35,9 +37,9 @@ public class Receipt {
         endSection(builder);
 
         builder.append("Inspected car: ");
-        appendLine(builder, CurrentVehicle.getRegNo());
+        appendLine(builder, currentVehicle.getRegNo());
         builder.append("Cost: ");
-        appendLine(builder, InspectionCostDatabase.inspectionCost(CurrentVehicle.getRegNo());
+        appendLine(builder, inspectionCostDatabase.inspectionCost(currentVehicle.getRegNo()).toString());
         endSection(builder);
         
         return builder.toString();

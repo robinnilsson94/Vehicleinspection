@@ -10,6 +10,7 @@ import java.util.List;
  */
 public class InspectionCostDatabase {
     private List<InspectionCostData> inspectionsAndCost = new ArrayList<>();
+    private VehicleInspectionsRegistry vehicleInspectionsRegistry;
 
 /**
      * Returns the cost for all inspections. If there are no such inspections, the returned list is empty.
@@ -18,7 +19,7 @@ public class InspectionCostDatabase {
      * @return An amount of money for the cost of all inspections.
      */
     public Amount inspectionCost(String regNo) {
-        String [] inspections = VehicleInspectionsRegistry.findVehicleInspections(regNo);
+        String [] inspections = vehicleInspectionsRegistry.findVehicleInspections(regNo);
         for (InspectionCostData inspectionslist : inspectionsAndCost) {
             if (inspectionslist.equals(inspections)) {
                 return inspectionslist.cost;
