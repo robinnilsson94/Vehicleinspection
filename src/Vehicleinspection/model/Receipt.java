@@ -2,6 +2,7 @@
 package Vehicleinspection.model;
 
 import java.time.LocalDateTime;
+import Vehicleinspection.integration.InspectionCostDatabase;
 
 /**
  * The receipt of an inspection.
@@ -34,9 +35,9 @@ public class Receipt {
         endSection(builder);
 
         builder.append("Inspected car: ");
-        appendLine(builder, inspection.getRegNo());
+        appendLine(builder, CurrentVehicle.getRegNo());
         builder.append("Cost: ");
-        appendLine(builder, inspection.getPayment().getTotalCost().toString());
+        appendLine(builder, InspectionCostDatabase.inspectionCost(CurrentVehicle.getRegNo());
         endSection(builder);
         
         return builder.toString();

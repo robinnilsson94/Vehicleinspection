@@ -16,20 +16,4 @@ public class CardPayment {
     public CardPayment(Amount paidAmt) {
         this.paidAmt = paidAmt;
     }
-    
-    /**
-     * Calculates the total cost of the specified inspection.
-     * 
-     * @param paidInspection The inspection for which the customer is paying.
-     */
-    void calculateTotalCost(InspectionCompany paidInspection) {
-        totalCost = paidInspection.getInspections().getCostofInspections();
-    }
-    
-    /**
-     * @return The total cost of the inspection that was paid. 
-     */
-    Amount getTotalCost() {
-        return totalCost;
-    }
 }

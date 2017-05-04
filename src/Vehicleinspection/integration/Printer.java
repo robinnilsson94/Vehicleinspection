@@ -2,11 +2,7 @@
 package Vehicleinspection.integration;
 
 import Vehicleinspection.model.Receipt;
-/**
- *
- * @author Robin
- */
-
+import Vehicleinspection.model.Printout;
 
 /**
  * The interface to the printer, used for all printouts initiated by this
@@ -14,7 +10,7 @@ import Vehicleinspection.model.Receipt;
  */
 public class Printer {
     /**
-     * Prints the specified receipt. This dummy implementation prints to
+     * Prints the specified receipt. This implementation prints to
      * <code>System.out</code> instead of a printer.
      *
      * @param receipt
@@ -22,5 +18,17 @@ public class Printer {
     public void printReceipt(Receipt receipt) {
         System.out.println(receipt.createReceiptString());
     }
+    
+    /**
+     * Prints the specified printout. This implementation prints to
+     * <code>System.out</code> instead of a printer.
+     *
+     * @param printout
+     */
+    public void printPrintout(Printout printout) {
+        System.out.println(printout.createPrintoutString());
+    }
+    
+    
 }
 
