@@ -17,7 +17,7 @@ public class Receipt {
      *
      * @param inspection The inspection proved by this receipt.
      */
-    Receipt(InspectionCompany inspection) {
+    public Receipt(InspectionCompany inspection) {
         this.inspection = inspection;
     }
 

@@ -23,8 +23,4 @@ public class View {
         this.contr = contr;
     }
 
-    /**
-     * Simulates a user input that generates calls to all system operations.
-     */
-    public void sampleExecution() {}
 }

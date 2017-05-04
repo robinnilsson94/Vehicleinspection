@@ -2,7 +2,6 @@ package Vehicleinspection.startup;
 
 import Vehicleinspection.controller.Controller; 
 import Vehicleinspection.integration.DBcreator; 
-import Vehicleinspection.view.View;
 import Vehicleinspection.integration.Printer;
 /**
  * Contains the <code>main</code> method. Performs all startup of the
@@ -18,7 +17,6 @@ public class Main {
         DBcreator creator = new DBcreator();
         Printer printer = new Printer();
         Controller contr = new Controller(creator, printer);
-        new View(contr).sampleExecution();
     }
 }
 
