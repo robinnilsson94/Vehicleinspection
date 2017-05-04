@@ -1,10 +1,6 @@
 
 package Vehicleinspection.model;
 
-/**
- *
- * @author Robin
- */
 import java.time.LocalDateTime;
 
 /**

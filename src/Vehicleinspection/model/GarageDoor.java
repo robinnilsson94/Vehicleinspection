@@ -10,7 +10,7 @@ import javax.swing.SwingConstants;
 /**
  * Controls the garage door.
  */
-class Door {
+class GarageDoor {
     private static final String CLOSED_TEXT = "The door is closed";
     private static final String OPEN_TEXT = "The door is open";
     private static final Color CLOSED_COLOR = Color.RED;
@@ -21,7 +21,7 @@ class Door {
     /**
      * Connects to the door servo and closes the door.
      */
-    Door() {
+    GarageDoor() {
         close();
         contactDoor();
     }

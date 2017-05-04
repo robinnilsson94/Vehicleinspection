@@ -6,7 +6,7 @@ package Vehicleinspection.model;
  */
 public class Garage {
     private GarageDoor door = new GarageDoor();
-    private Queue queue = new Queue();
+    private Display queue = new Display();
 
     /**
      * Creates an instance and connects to the door and queue number display.

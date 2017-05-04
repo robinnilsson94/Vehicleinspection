@@ -1,10 +1,35 @@
-
 package Vehicleinspection.model;
 
 /**
- *
- * @author Robin
+ * Represents one specific payment for one specific inspection. The inspection is payed
+ * with creditcard.
  */
 public class CardPayment {
+    private Amount paidAmt;
+    private Amount totalCost;
+
+    /**
+     * Creates a new instance. The customer paid the specified amount.
+     *
+     * @param paidAmt The amount of money that was charged from the customers creditcard.
+     */
+    public CardPayment(Amount paidAmt) {
+        this.paidAmt = paidAmt;
+    }
     
+    /**
+     * Calculates the total cost of the specified inspection.
+     * 
+     * @param paidInspection The inspection for which the customer is paying.
+     */
+    void calculateTotalCost(InspectionCompany paidInspection) {
+        totalCost = paidInspection.getInspections().getCostofInspections();
+    }
+    
+    /**
+     * @return The total cost of the inspection that was paid. 
+     */
+    Amount getTotalCost() {
+        return totalCost;
+    }
 }
