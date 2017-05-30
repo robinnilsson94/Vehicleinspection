@@ -6,7 +6,6 @@ import Vehicleinspection.integration.VehicleInspectionsRegistry;
 import Vehicleinspection.integration.Printer;
 import Vehicleinspection.model.InspectionCompany;
 import Vehicleinspection.model.CardPayment;
-import Vehicleinspection.model.Amount;
 import Vehicleinspection.model.Garage;
 import Vehicleinspection.model.CurrentVehicle;
 
@@ -54,7 +53,7 @@ public class Controller {
      *
      * @param paidAmt The paid amount.
      */
-    public void pay(Amount paidAmt) {
+    public void pay(int paidAmt) {
         CardPayment payment = new CardPayment(paidAmt);
         inspection.printReceipt(printer);
         inspection.printPrintout(printer);
@@ -73,9 +72,10 @@ public class Controller {
      * @param regNo, the registration number.
      * @return cost, the cost of the inspection.
      */
-    public Amount inspectionCost(String regNo){
-        Amount cost = inspectionCostDatabase.inspectionCost(regNo);
+    public int inspectionCost(String regNo){
+        int cost = inspectionCostDatabase.inspectionCost(regNo);
         return cost;
+    }
         
     
     /**

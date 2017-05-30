@@ -2,7 +2,7 @@
 package Vehicleinspection.view;
 
 import Vehicleinspection.controller.Controller;
-import Vehicleinspection.model.Amount;
+
 
 
    /**
@@ -27,10 +27,10 @@ public class View {
     public void sampleExecution()
     {
         System.out.println("* * * Welcome to the best Vehicle inspection system * * *");  
-        contr.startNewInspection(); 
-        contr.closeDoor();            
+                   
             
-        Amount cost = contr.inspectionCost("mun101");
+        int cost = contr.inspectionCost("mun101");
+        System.out.println(cost);
         contr.pay(cost);
         contr.inspectionsToMake("mun101");
         contr.updateResultOfInspection(true);
@@ -41,3 +41,8 @@ public class View {
     }
 
 }
+
+/**
+ * contr.startNewInspection(); 
+*      contr.closeDoor(); 
+*/

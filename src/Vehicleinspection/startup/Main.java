@@ -4,6 +4,7 @@ import Vehicleinspection.controller.Controller;
 import Vehicleinspection.integration.DBcreator; 
 import Vehicleinspection.integration.Printer;
 import Vehicleinspection.view.View;
+import Vehicleinspection.model.Garage;
 /**
  * Contains the <code>main</code> method. Performs all startup of the
  * application.
@@ -18,6 +19,7 @@ public class Main {
         DBcreator creator = new DBcreator();
         Printer printer = new Printer();
         Controller contr = new Controller(creator, printer);
+        Garage garage = new Garage ();
         View view = new View(contr);
         
         view.sampleExecution();

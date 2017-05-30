@@ -5,15 +5,15 @@ package Vehicleinspection.model;
  * with creditcard.
  */
 public class CardPayment {
-    private Amount paidAmt;
-    private Amount totalCost;
+    private int paidAmt;
+    private int totalCost;
 
     /**
      * Creates a new instance. The customer paid the specified amount.
      *
      * @param paidAmt The amount of money that was charged from the customers creditcard.
      */
-    public CardPayment(Amount paidAmt) {
+    public CardPayment(int paidAmt) {
         this.paidAmt = paidAmt;
     }
 }

@@ -9,14 +9,17 @@ import java.util.List;
  */
 public class VehicleInspectionsRegistry {
     private List<VehicleData> vehicles = new ArrayList<>();
+    
 
     VehicleInspectionsRegistry() {
         addVehicles();
     }
 
     private void addVehicles() {
-        vehicles.add(new VehicleData("mun101", {"Hjul", "Bromsar", "Ljus"}));
-        vehicles.add(new VehicleData ("sol102", {"Bakhjul", "Motor", "Baklysen"}));
+        String[] inspections1 = {"Hjul", "Bromsar", "Ljus"};
+        String[] inspections2 ={"Bakhjul", "Motor", "Baklysen"};
+        vehicles.add(new VehicleData("mun101", inspections1));
+        vehicles.add(new VehicleData ("sol102", inspections2));
     }
 
     /**

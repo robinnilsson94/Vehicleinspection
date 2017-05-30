@@ -9,7 +9,7 @@ import javax.swing.SwingConstants;
 /**
  * Controls the queue number display outside the garage..
  */
-class QueueNumberDisplay {
+class Display {
     private static String HEADER = "Now Serving:";
     private int queueNumber = -1;
     private JLabel queueNumberLabel = new JLabel("", SwingConstants.CENTER);
@@ -18,7 +18,7 @@ class QueueNumberDisplay {
      * Connects to the queue number display and shows the number
      * <code>zero</code>.
      */
-    QueueNumberDisplay() {
+    Display() {
         nextNumber();
         contactDisplay();
     }
