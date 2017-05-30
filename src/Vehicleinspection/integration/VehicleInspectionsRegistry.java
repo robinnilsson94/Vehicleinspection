@@ -16,7 +16,7 @@ public class VehicleInspectionsRegistry {
 
     private void addVehicles() {
         vehicles.add(new VehicleData("mun101", {"Hjul", "Bromsar", "Ljus"}));
-        vehicles.add(new VehicleData("sol102", {"Bakhjul", "Motor, Baklysen"}));
+        vehicles.add(new VehicleData ("sol102", {"Bakhjul", "Motor", "Baklysen"}));
     }
 
     /**

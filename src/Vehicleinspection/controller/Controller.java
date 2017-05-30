@@ -42,7 +42,8 @@ public class Controller {
     }
     
     /**
-     * Handles the Opening of the door and displaying of the next queue number.
+     * Updates the result of the inpection.
+     * @param pass, the result of an inspection.
      */
     public void updateResultOfInspection(boolean pass) {
         currentVehicle.resultOfInspection(pass);
@@ -58,4 +59,36 @@ public class Controller {
         inspection.printReceipt(printer);
         inspection.printPrintout(printer);
     }
+    
+     /**
+     * Handles the closing of the door.
+     */
+    public void closeDoor(){
+        garage.closeDoor();
+    }
+    
+    /**
+     * Fetches inspection cost for a vehicle.
+     *
+     * @param regNo, the registration number.
+     * @return cost, the cost of the inspection.
+     */
+    public Amount inspectionCost(String regNo){
+        Amount cost = inspectionCostDatabase.inspectionCost(regNo);
+        return cost;
+        
+    
+    /**
+     * Fetches inspections for a vehicle.
+     *
+     * @param regNo, the registration number.
+     * @return inspections, the inspections to make.
+     */
+
+    public String[] inspectionsToMake(String regNo){
+        String [] inspections = vir.findVehicleInspections(regNo);
+        return inspections;
+    }
+        
+    
 }
