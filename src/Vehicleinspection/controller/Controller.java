@@ -8,6 +8,9 @@ import Vehicleinspection.model.InspectionCompany;
 import Vehicleinspection.model.CardPayment;
 import Vehicleinspection.model.Garage;
 import Vehicleinspection.model.CurrentVehicle;
+import Vehicleinspection.model.ResultsOnCurrentVehicle;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This is the application's only controller class. All calls to the model pass
@@ -20,17 +23,21 @@ public class Controller {
     private Printer printer;
     private Garage garage;
     private CurrentVehicle currentVehicle;
+    private ResultsOnCurrentVehicle resultsOnCurrentVehicle;
 
     /**
      * Creates a new instance.
      *
      * @param dBcreator Used to get all classes that handle database calls.
      * @param printer    Interface to printer.
+     * @param garage     interface to garage. 
      */
-    public Controller(DBcreator dBcreator, Printer printer) {
+    public Controller(DBcreator dBcreator, Printer printer, Garage garage) {
         this.vir = dBcreator.getVehicleInspectionsRegistry();
         this.inspectionCostDatabase = dBcreator.getInspectionCostDatabase();
         this.printer = printer;
+        this.garage = garage;
+        
     }  
     
     /**
@@ -38,14 +45,29 @@ public class Controller {
      */
     public void startNewInspection() {
         garage.nextCustomer();
+        
     }
     
     /**
      * Updates the result of the inpection.
      * @param pass, the result of an inspection.
      */
-    public void updateResultOfInspection(boolean pass) {
-        currentVehicle.resultOfInspection(pass);
+    public void updateResultOfInspection(ResultsOnCurrentVehicle list, String result) {
+        list.updateResults(result);
+    }
+     /**
+     * Creates a list for the result of the inpection.
+     * @param result, the result of an inspection.
+     */
+     public void createResultList(String result) {
+        List<String> list = new ArrayList<>();
+        ResultsOnCurrentVehicle resultsOnCurrentVehicle = new ResultsOnCurrentVehicle(list);
+        updateResultOfInspection(resultsOnCurrentVehicle, result);
+    }
+     
+    public List getResults() {
+        List list = resultsOnCurrentVehicle.getResults();
+        return list;
     }
     
     /**
@@ -55,8 +77,10 @@ public class Controller {
      */
     public void pay(int paidAmt) {
         CardPayment payment = new CardPayment(paidAmt);
+        InspectionCompany inspection = new InspectionCompany(vir);
+        inspection.pay(payment);
         inspection.printReceipt(printer);
-        inspection.printPrintout(printer);
+        
     }
     
      /**
@@ -69,11 +93,11 @@ public class Controller {
     /**
      * Fetches inspection cost for a vehicle.
      *
-     * @param regNo, the registration number.
+     * @param inspections, the inspections.
      * @return cost, the cost of the inspection.
      */
-    public int inspectionCost(String regNo){
-        int cost = inspectionCostDatabase.inspectionCost(regNo);
+    public int inspectionCost(String [] inspections){
+        int cost = inspectionCostDatabase.inspectionCost(inspections);
         return cost;
     }
         
@@ -89,6 +113,15 @@ public class Controller {
         String [] inspections = vir.findVehicleInspections(regNo);
         return inspections;
     }
+    
+    public void getPrintout(){
+        InspectionCompany inspection = new InspectionCompany(vir);
+        inspection.printPrintout(printer);
+    }
+ 
+
+        
+    
         
     
 }

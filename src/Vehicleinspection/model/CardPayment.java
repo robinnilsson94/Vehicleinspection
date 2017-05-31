@@ -16,4 +16,8 @@ public class CardPayment {
     public CardPayment(int paidAmt) {
         this.paidAmt = paidAmt;
     }
+    
+     public int getTotalCost() {
+        return paidAmt;
+    }
 }

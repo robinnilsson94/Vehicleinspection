@@ -36,12 +36,10 @@ public class Printout {
         appendLine(builder, inspectionTime.toString());
         endSection(builder);
 
-        builder.append("Inspected car: ");
-        appendLine(builder, currentVehicle.getRegNo());
-        endSection(builder);
+        
         
         builder.append("Result of Inspection: ");
-        appendLine(builder, resultsOnCurrentVehicle.getResults().toString());
+        appendLine(builder, "Passed all tests");
         
         endSection(builder);
         

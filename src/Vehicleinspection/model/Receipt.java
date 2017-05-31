@@ -37,9 +37,8 @@ public class Receipt {
         endSection(builder);
 
         builder.append("Inspected car: ");
-        appendLine(builder, currentVehicle.getRegNo());
         builder.append("Cost: ");
-        appendLine(builder, "" + inspectionCostDatabase.inspectionCost(currentVehicle.getRegNo()));
+        appendLine(builder, "" + inspection.getTotalCost() + " kr");
         endSection(builder);
         
         return builder.toString();

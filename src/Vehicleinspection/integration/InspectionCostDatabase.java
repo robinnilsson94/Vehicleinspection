@@ -12,15 +12,15 @@ public class InspectionCostDatabase {
     private List<InspectionCostData> inspectionsAndCost = new ArrayList<>();
     private VehicleInspectionsRegistry vehicleInspectionsRegistry;
     private int inspectionCost;
+    
 
 /**
      * Returns the cost for all inspections. If there are no such inspections, the returned list is empty.
      *
-     * @param regNo The registration number of the customer vehicle.
-     * @return An amount of money for the cost of all inspections.
+     * @param inspections The inspections for the customer vehicle.
+     * @return An integer of money for the cost of all inspections.
      */
-    public int inspectionCost(String regNo) {
-        String [] inspections = vehicleInspectionsRegistry.findVehicleInspections(regNo);
+    public int inspectionCost(String [] inspections) {
         for (String inspection : inspections)
             for (InspectionCostData inspectionslist : inspectionsAndCost) {
             
@@ -28,9 +28,9 @@ public class InspectionCostDatabase {
                 
                     inspectionCost += inspectionslist.cost;
             }
-            return inspectionCost;
+            
         }
-        return 0;
+        return inspectionCost;
     }
 
     InspectionCostDatabase() {

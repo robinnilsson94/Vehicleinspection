@@ -31,12 +31,13 @@ public class VehicleInspectionsRegistry {
      */
     public String [] findVehicleInspections(String regNo) {
         for (VehicleData vehicle : vehicles) {
-            if (vehicle.regNo.equals(regNo)) {
-                System.out.print("Found!");
+            
+             if (vehicle.regNo.equals(regNo)) {
+                
                 return vehicle.inspections;
             }
         }
-        System.out.print("Empty");
+        
         return null;
     }
 

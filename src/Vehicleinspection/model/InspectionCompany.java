@@ -13,17 +13,17 @@ public class InspectionCompany {
     /**
      * Creates a new instance, representing an inspection.
 
-//     * @param vehicleInspectionsRegistry The data store with information about available inspections.
+//     * @param vir The data store with information about available inspections.
      */
     public InspectionCompany(VehicleInspectionsRegistry vir) {
         this.vir = vir;
     }
   
     /**
-     * @return The payment info for this inspection.
+     * @return The payment cost.
      */
-    public CardPayment getPayment() {
-        return payment;
+    public int getTotalCost() {
+        return payment.getTotalCost();
     }
     
     /**

@@ -5,6 +5,7 @@ package Vehicleinspection.model;
  */
 public class CurrentVehicle {
     private String regNo;
+    private String [] inspections;
     private ResultsOnCurrentVehicle resultsOnCurrentVehicle;
 
     /**
@@ -13,9 +14,12 @@ public class CurrentVehicle {
      * @param regNo  The vehicles registration number.
      
      */
-    public CurrentVehicle(String regNo) {
+    public CurrentVehicle(String regNo, String [] inspections) {
         this.regNo = regNo;
+        this.inspections = inspections;
     }
+    
+    
 
     /**
      * Get the value of regNo
@@ -26,8 +30,21 @@ public class CurrentVehicle {
         return regNo;
     }
     
-    public void resultOfInspection (boolean pass){
-        resultsOnCurrentVehicle.updateResults(pass);
+     /**
+     * Get the inspections for the current vehicle.
+     *
+     * @return the inspections.
+     */
+    public String [] getInspections() {
+        return inspections;
+    }
+     /**
+     * Update results for the current vehicle.
+     *
+     * @param result  the result of the inspection.
+     */
+    public void resultOfInspection (String result){
+        resultsOnCurrentVehicle.updateResults(result);
     }
 
 

@@ -18,8 +18,8 @@ public class Main {
     public static void main(String[] args) {
         DBcreator creator = new DBcreator();
         Printer printer = new Printer();
-        Controller contr = new Controller(creator, printer);
         Garage garage = new Garage ();
+        Controller contr = new Controller(creator, printer, garage);
         View view = new View(contr);
         
         view.sampleExecution();

@@ -1,10 +1,13 @@
 package Vehicleinspection.model;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Contains information about one particular vehicle.
  */
 public class ResultsOnCurrentVehicle {
-    private boolean [] results;
+    private List<String> results = new ArrayList<>();
+     
 
     /**
      * Creates a new instance representing a result for a particular vehicle.
@@ -12,7 +15,7 @@ public class ResultsOnCurrentVehicle {
      * @param results   The vehicles results.
      
      */
-    public ResultsOnCurrentVehicle(boolean [] results) {
+    public ResultsOnCurrentVehicle(List results) {
         this.results = results;
     }
 
@@ -21,16 +24,16 @@ public class ResultsOnCurrentVehicle {
      * 
      * @param result The vehicles result. 
      */ 
-    public void updateResults (boolean result){
-        results[results.length + 1] = result;
+    public void updateResults (String result){
+        results.add(result);
     }
     
      /**
      * Get the results.
      *
-     * @return the results as a boolean array.
+     * @return the results as an String array.
      */
-    public boolean [] getResults() {
+    public List getResults() {
         return results;
     }
 
