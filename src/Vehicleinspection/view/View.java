@@ -28,11 +28,14 @@ public class View {
     {
         System.out.println("* * * Welcome to the best Vehicle inspection system * * *");  
                    
-            
-        int cost = contr.inspectionCost("mun101");
+        contr.startNewInspection(); 
+        contr.closeDoor(); 
+        String regNo = "mun101";    
+        
+        int cost = contr.inspectionCost(regNo);
         System.out.println(cost);
         contr.pay(cost);
-        contr.inspectionsToMake("mun101");
+        contr.inspectionsToMake(regNo);
         contr.updateResultOfInspection(true);
         
             
@@ -42,7 +45,3 @@ public class View {
 
 }
 
-/**
- * contr.startNewInspection(); 
-*      contr.closeDoor(); 
-*/
